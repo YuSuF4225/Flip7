@@ -1,0 +1,49 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body {
+    font-family: "Comic Sans", serif;
+    min-height: 100vh;
+}
+
+button {
+    font-family: "Comic Sans", serif;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/*---------- PAGES ----------*/
+
+.principal {
+    display: none;
+    min-height: 100vh;
+    background: radial-gradient(ellipse, #26640b, #011607);
+    color: #ffd700;
+}
+
+.principal.actif {
+    display: block;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    transform: scale(1.4);
+    margin-right: 6px;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

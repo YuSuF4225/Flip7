@@ -1,0 +1,116 @@
+/*---------- PAGE CONFIG ----------*/
+
+#principal-config.actif {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: flex-start;
+}
+
+#principal-config h2 {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 40px;
+}
+
+.config {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bloc {
+    border: 2px solid #011507;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.titre-bloc {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ligne {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.config input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+}
+
+/*----- Liste joueurs -----*/
+
+.config .player {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 215, 0, 0.2);
+    border: 2px solid #ffd700;
+    margin-bottom: 4px;
+}
+
+.badge {
+    background-color: #ffd700;
+    color: #011507;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
+    min-width: 90px;
+}
+
+.rond {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ffd700;
+    background-color: rgba(0,0,0,0.2);
+    color: #ffd700;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.rond:hover {
+    background-color: #083a11;
+    color: #f89b05;
+    border-color: #f89b05;
+    cursor: pointer;
+}
+
+.config .actions button {
+    padding: 5px 15px;
+    font-size: 18px;
+    border: #ffd700 2px solid;
+    color: #ffd700;
+    border-radius: 10px;
+    background-color:rgba(0,0,0,0.2);;
+    font-weight: bold;
+}
+
+.config .actions button:hover {
+    background-color: #083a11;
+    color: #f89b05;
+    border-color: #f89b05;
+    cursor: pointer;
+}

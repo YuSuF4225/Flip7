@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Flip7 Yusuf & Nizar</title>
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/accueil.css">
+        <link rel="stylesheet" href="css/stats.css">
+        <link rel="stylesheet" href="css/config.css">
+        <link rel="stylesheet" href="css/carte.css">
+        <link rel="stylesheet" href="css/game.css">
+        <link rel="stylesheet" href="css/resultats.css">
+        <link rel="stylesheet" href="css/mobile.css">
+        <link rel="stylesheet" href="css/darkmode.css">
+        <script src="js/carte.js" defer></script>
+        <script src="js/joueur.js" defer></script>
+        <script src="js/manche.js" defer></script>
+        <script src="js/game.js" defer></script>
+        <script src="js/interface.js" defer></script>
+        <script src="js/event.js" defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="principal-accueil" class="principal actif">
+            <h2 class="titre"><span class="flip">FLIP</span><span class="seven">7</span></h2>
+            <div class="btns-accueil">
+                <button id="btn-newgame">NOUVELLE PARTIE</button>
+                <button id="btn-accueil-stats">STATISTIQUES</button>
+            </div>
+        </div>
+        <div id="principal-config" class="principal">
+            <h2>Paramétrage de la partie</h2>
+            <div class="config">
+                <div class="bloc">
+                    <div class="titre-bloc">Pseudo :</div>
+                    <div class="ligne">
+                        <input type="text" id="pseudo" value="" placeholder="Entrez un pseudo">
+                        <button class="rond" id="btn-ajouter-h">+</button>
+                    </div>
+                </div>
+                <div class="bloc">
+                    <div class="titre-bloc">Ajouter une IA :</div>
+                    <div class="ligne">
+                        <label><input type="radio" name="IA" value="facile" checked>IA Simple</label>
+                        <label><input type="radio" name="IA" value="dur">IA Avancée</label>
+                        <button class="rond" id="btn-ajouter-ia">+</button>
+                    </div>
+                </div>
+                <div id="liste-joueurs"></div>
+                <label>
+                    <strong>Mode Sombre</strong>
+                    <input type="checkbox" name="cbDarkmode" id="cb-darkmode">
+                </label>
+                <div class="actions">
+                    <button id="btn-retour">RETOUR</button>
+                    <button id="btn-demarrer">DEMARRER</button>
+                </div>
+            </div>
+        </div>
+        <div id="principal-jeu" class="principal">
+            <div id="bande-tour">
+                <span id="bande-texte"></span>
+                <input type="range" id="volume" min="0" max="1" step="0.05" value="1">
+            </div>
+            <div id="message"></div>
+            <div id="zone-jeu">
+                <div id="joueurs"></div>
+            </div>
+            <div id="afficher-carte"></div>
+            <div id="choix-effet" class="effet">
+                <button id="toggle-effet">▼ Cacher</button>
+            </div>
+            <div id="Fin-Manche">
+                <h2>Fin de manche</h2>
+                <div id="resultats-manche"></div>
+                <button id="btn-suite">SUITE</button>
+                <button id="btn-resultats" style="display:none;">VOIR LES RESULTATS</button>
+            </div>
+            <div id="Fin-Jeu">
+                <h2>Partie terminée !</h2>
+                <div id="resultats-partie"></div>
+                <button id="btn-fin-jeu">MENU PRINCIPAL</button>
+            </div>
+            <div id="actionsJeu">
+                    <button id="btn-piocher">PIOCHER</button>
+                    <button id="btn-reste">STOP</button>
+                    <button id="btn-afficher-effet" style="display: none;">CHOIX</button>
+            </div>
+            <div id="bandeFin">
+                <button id="btn-quitter">QUITTER</button>
+                <button id="btn-remplacer">REMPLACER PAR UNE IA</button>
+            </div>
+        </div>
+        <div id="principal-stats" class="principal">
+            <div class="barre-stats">
+                <h2>Statistiques des parties</h2>
+                <button id="btn-stats" class="bouton-stats">RETOUR</button>
+            </div>
+            <div id="statistiques"></div>
+        </div>
+    </body>
+</html>

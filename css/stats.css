@@ -1,0 +1,140 @@
+/*---------- PAGE STATS ----------*/
+
+#principal-stats.actif {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: flex-start;
+    padding-top: 80px;
+}
+
+/*----- Barre du haut -----*/
+
+.barre-stats {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: #022D12;
+    border-bottom: 2px solid #ffd700;
+    z-index: 100;
+}
+
+.barre-stats h2 {
+    margin: 0;
+    color: #ffd700;
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+
+.barre-stats button {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    font-size: 16px;
+    border: 2px solid #ffd700;
+    background: #26640b;
+    color: #ffd700;
+    border-radius: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.barre-stats button:hover {
+    background: #083a11;
+    color: #f89b05;
+    border-color: #f89b05;
+    cursor: pointer;
+}
+
+/*----- Zone Records -----*/
+
+.records {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.record {
+    background: rgba(255, 215, 0, 0.15);
+    border: 2px solid #ffd70055;
+    border-radius: 12px;
+    padding: 10px 10px;
+    color: #ffd700;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.record:hover {
+    transform: scale(1.05);
+    background: rgba(255, 215, 0, 0.25);
+}
+
+/*----- Bloc parties -----*/
+
+.stat-bloc {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 2px solid #ffd70033;
+    border-radius: 14px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.stat-bloc:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px #ffd70055;
+}
+
+.stat-titre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 10px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/*----- Joueurs -----*/
+
+.stat-joueurs {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ligne-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid #ffffff11;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.ligne-stat:hover {
+    background: rgba(255, 215, 0, 0.08);
+    color: #fff;
+}
+
+.stat-valeur {
+    font-size: 24px;
+    color: #fff;
+}

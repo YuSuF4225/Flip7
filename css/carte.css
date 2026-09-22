@@ -1,0 +1,415 @@
+/*---------- STYLE CARTE ----------*/
+
+.contour-carte {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.carte {
+    position: relative;
+    width: 140px;
+    height: 196px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 4px solid #1a1a8a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cadre doré */
+.cadre-interieur {
+    position: absolute;
+    inset: 8px;
+    border: 5px solid #f5e040;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1.5px #1840c8, inset 0 0 0 1.5px #1840c8;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/*----- CARTE NUMERO -----*/
+
+/* couleur de fonds des cartes */
+.carte-numero { background: linear-gradient(135deg, #f9efc0, #e7c766); }
+.carte-modificateur { background: linear-gradient(135deg, #ffbb44, #d27709); }
+.carte-gel { background: linear-gradient(135deg, #9fd8f0, #2990b9); }
+.carte-flipthree { background: linear-gradient(135deg, #ffe966, #d4b800); }
+.carte-secondechance { background: linear-gradient(135deg, #ff6a6a, #a50d0d); }
+
+/* couleur des cartes numero */
+.n0 { --couleur-carte: #f10567; }
+.n1 { --couleur-carte: #a29090; }
+.n2 { --couleur-carte: #a1e131; }
+.n3 { --couleur-carte: #ed3b56; }
+.n4 { --couleur-carte: #50bedc; }
+.n5 { --couleur-carte: #129a06; }
+.n6 { --couleur-carte: #a02bb5; }
+.n7 { --couleur-carte: #e26b6b; }
+.n8 { --couleur-carte: #8bd652; }
+.n9 { --couleur-carte: #de720c; }
+.n10 { --couleur-carte: #d42010; }
+.n11 { --couleur-carte: #08a0c8; }
+.n12 { --couleur-carte: #675656; }
+
+/* PRESS YOUR LUCK */
+.titre-press {
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 7px;
+    font-weight: bold;
+    color: #1840c8;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    z-index: 10;
+    font-family: 'Arial Black', sans-serif;
+    background: none;
+}
+
+/* Arcs de cercle */
+.arcs {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.arc {
+    position: absolute;
+    border: 3px solid var(--couleur-carte);
+    background: transparent;
+    box-shadow: 0 0 0 2px white, inset 0 0 0 2px white;
+    z-index: 15;
+}
+
+.arc-haut {
+    top: 0;
+    left: 50%;
+    border-radius: 0 0 56px 56px;
+    width: 56px;
+    height: 28px;
+    border-top: none;
+    transform: translateX(-50%);
+}
+
+.arc-bas {
+    bottom: 0;
+    left: 50%;
+    border-radius: 56px 56px 0 0;
+    width: 56px;
+    height: 28px;
+    border-bottom: none;
+    transform: translateX(-50%);
+}
+
+.arc-gauche {
+    left: 0;
+    top: 50%;
+    border-radius: 0 56px 56px 0; 
+    width: 28px;
+    height: 56px;
+    border-left: none;
+    transform: translateY(-50%);
+}
+
+.arc-droit {
+    right: 0;
+    top: 50%;
+    border-radius: 56px 0 0 56px;
+    width: 28px;
+    height: 56px;
+    border-right: none;
+    transform: translateY(-50%);
+}
+
+/* Chiffre */
+.chiffre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--couleur-carte);
+    font-size: 80px;
+    font-family: 'Century Gothic', 'Gill Sans', 'Arial Rounded', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    -webkit-text-stroke: 2.5px #1840c8;
+    line-height: 1;
+    white-space: nowrap;
+    z-index: 20;
+}
+
+.n10 .chiffre,
+.n11 .chiffre,
+.n12 .chiffre { font-size: 68px; }
+
+.n10 .chiffre { transform: translate(-50%, -50%) translateX(-2px); }
+.n12 .chiffre { transform: translate(-50%, -50%) translateX(-1px); }
+
+.n0 .chiffre,
+.n1 .chiffre,
+.n2 .chiffre,
+.n3 .chiffre,
+.n4 .chiffre,
+.n5 .chiffre,
+.n6 .chiffre,
+.n7 .chiffre,
+.n8 .chiffre,
+.n9 .chiffre { transform: translate(-50%, -50%) translateY(-3px);}
+
+/* Ruban du numéro */
+.ruban-numero {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85px;
+    background: #f5ecce;
+    border: 1px solid #1840c8;
+    border-radius: 3px;
+    box-shadow: 0 0 0 2px #f5e040, 0 0 0 4px #1840c8;
+    text-align: center;
+    padding: 4px 0;
+    z-index: 10;
+    font-size: 9px;
+    font-weight: bold;
+    font-family: 'Arial Black', 'Arial', sans-serif;
+    letter-spacing: 1px;
+    color: #1840c8;
+}
+
+/*----- CARTE MODIFICATEUR -----*/
+.etiquette-modif {
+    font-size: 58px;
+    font-weight: 900;
+    line-height: 1;
+    margin: 8px 0;
+    color: #d42010;
+    -webkit-text-stroke: 2.5px #1840c8;
+}
+
+.texte-descriptif {
+    color: #1840c8;
+    font-size: 5px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 90%;
+    word-break: break-word;
+}
+
+.texte-haut { margin-bottom: 6px; }
+.texte-bas { margin-top: 6px; }
+
+/*----- CARTE ACTION -----*/
+.contenu-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+.texte-action {
+    font-size: 5px;
+    font-weight: bold;
+    color: #1840c8;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-family: 'Arial Black', sans-serif;
+    background: none;
+    margin: 2px 0;
+    padding: 1px 4px;
+    line-height: 1.3;
+    max-width: 90%;
+}
+
+.ruban-action{
+    background: #f5ecce;
+    border: 1px solid #1840c8;
+    border-radius: 3px;
+    box-shadow: 0 0 0 2px #f5e040, 0 0 0 4px #1840c8;
+    text-align: center;
+    padding: 6px 10px;
+    margin: 8px 0;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Arial Black', 'Arial', sans-serif;
+    letter-spacing: 1px;
+    color: #1840c8;
+    display: inline-block;
+    white-space: normal;
+    line-height: 1.3;
+    max-width: 90%;
+}
+
+/* INSTANT ACTION */
+.badge-instant {
+    position: absolute;
+    background: linear-gradient(145deg, #e62010, #8a0a00);
+    color: #ffecb3;
+    font-size: 4px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 5px;
+    border-radius: 16px;
+    line-height: 1.1;
+    letter-spacing: 0.4px;
+    z-index: 15;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.badge-instant span { display: block;}
+
+.badge-hg {
+    top: 19px;
+    right: 18px;
+}
+
+.badge-bd {
+    bottom: 19px;
+    left: 18px;
+}
+
+/* Icone Cadenas */
+.cadenas{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    z-index: 20;
+}
+
+.cadenas-hg { 
+    top: 17px; 
+    left: 15px;
+}
+
+.cadenas-bd {
+    bottom: 17px;
+    right: 15px;
+}
+
+.cadenas-corps {
+    position: absolute;
+    bottom: 0;
+    left: 4px;
+    width: 16px;
+    height: 12px;
+    background: gold;
+    border-radius: 3px 3px 6px 6px;
+}
+
+.cadenas-anneau {
+    position: absolute;
+    top: 2px;
+    left: 7px;
+    width: 10px;
+    height: 8px;
+    border: 2px solid gold;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    box-sizing: border-box;
+}
+
+.cadenas-trou {
+    position: absolute;
+    bottom: 3px;
+    left: 11px;
+    width: 4px;
+    height: 5px;
+    background: #333;
+    border-radius: 2px;
+}
+
+/* Icone Trois cartes */
+.eventail {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    z-index: 20;
+}
+
+.eventail-hg { 
+    top: 18px; 
+    left: 20px;
+}
+
+.eventail-bd {
+    bottom: 13px;
+    right: 9px;
+}
+
+.carte-eventail {
+    position: absolute;
+    width: 16px;
+    height: 20px;
+    background: #f5ecce;
+    border: 1px solid #1840c8;
+    border-radius: 2px;
+}
+
+.carte-eventail:nth-child(1) {
+    transform: rotate(-20deg) translate(-2px, 2px);
+    background: #e0d0a0;
+}
+.carte-eventail:nth-child(2) {
+    background: #f5ecce;
+    z-index: 2;
+}
+.carte-eventail:nth-child(3) {
+    transform: rotate(20deg) translate(2px, 2px);
+    background: #e0d0a0;
+}
+
+/* Icone coeur */
+.coeur {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    z-index: 20;
+}
+
+.coeur-hg {
+    top: 23px;
+    left: 21px;
+}
+
+.coeur-bd {
+    bottom: 18px;
+    right: 21px;
+}
+
+.forme-coeur {
+    position: relative;
+    width: 18px;
+    height: 16px;
+    margin: 2px auto;
+    background: #1840c8;
+    transform: rotate(45deg);
+    border-radius: 2px;
+}
+
+.forme-coeur::before,
+.forme-coeur::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 16px;
+    background: #1840c8;
+    border-radius: 50%;
+}
+
+.forme-coeur::before {
+    top: -8px;
+    left: 0;
+}
+
+.forme-coeur::after {
+    top: 0;
+    left: -8px;
+}

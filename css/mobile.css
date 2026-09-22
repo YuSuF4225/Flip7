@@ -1,0 +1,148 @@
+/*---------- VERSION MOBILE ----------*/
+
+@media (max-width: 600px) {
+    #principal-accueil h2 {
+        font-size: 80px;
+    }
+    .btns-accueil button {
+        font-size: 20px;
+    }
+
+    .grille-joueurs {
+        grid-template-columns: 1fr !important;
+    }
+
+    .cartes .contour-carte {
+        width: 46px;
+        height: 64px;
+    }
+
+    #actionsJeu {
+        bottom: 90px;
+        width: 90%;
+        justify-content: center;
+    }
+
+    #actionsJeu button {
+        font-size: 15px;
+        padding: 14px 24px;
+        flex: 1;
+    }
+
+    #message {
+        font-size: 14px;
+        padding: 10px 16px;
+        white-space: normal;
+        text-align: center;
+        width: 90%;
+    }
+
+    #bande-tour {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    #volume {
+        width: 80px;
+    }
+
+    #bandeFin button {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    #zone-jeu {
+        padding: 100px 10px 160px;
+    }
+
+    .joueur {
+        width: 90vw;
+        box-sizing: border-box;
+    }
+
+    .joueur.actif {
+        transform: scale(1.02);
+    }
+
+    .cartes {
+        width: 100%;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .cartes .contour-carte {
+        width: 46px;
+        height: 64px;
+        overflow: hidden;
+    }
+
+    .cartes .carte {
+        transform: scale(0.33);
+        transform-origin: top left;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .joueur .cartes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .config {
+        padding: 10px;
+    }
+
+    .config .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .barre-stats h2 {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .barre-stats button {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    #principal-config h2 {
+        font-size: 23px;
+    }
+
+    #Fin-Manche h2, #Fin-Jeu h2 {
+        font-size: 18px;
+    }
+
+    #Fin-Manche, #Fin-Jeu {
+        font-size: 13px;
+        padding: 20px 15px;
+        width: 92vw;
+    }
+
+    .ligne-resultat {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    .classement {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+
+    .barre-stats button {
+        font-size: 10px;
+    }
+
+    .effet {
+        width: 90vw;
+        left: 5%;
+        transform: none;
+        box-sizing: border-box;
+    }
+}

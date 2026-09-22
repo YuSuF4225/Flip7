@@ -1,0 +1,103 @@
+/*---------- AFFICHAGE RESULTATS ----------*/
+
+#Fin-Manche, #Fin-Jeu{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(2, 14, 4, 0.97);
+    border: 2px solid #ffd700;
+    border-radius: 18px;
+    padding: 32px 40px;
+    z-index: 200;
+    text-align: center;
+    min-width: 320px;
+    box-shadow: 0 0 40px #ffd70033;
+}
+
+#Fin-Manche h2, #Fin-Jeu h2 {
+    font-size: 26px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+}
+
+#Fin-Manche button, #Fin-Jeu button {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 200px;
+    padding: 10px 30px;
+    font-size: 16px;
+    border: 2px solid #ffd700;
+    background: #26640b;
+    color: #ffd700;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+#Fin-Manche button:hover, #Fin-Jeu button:hover {
+    background: #083a11;
+    color: #f89b05;
+    border-color: #f89b05;
+}
+
+/*----- Tableau fin de manche -----*/
+
+#resultats-manche {
+    width: 100%;
+}
+
+.resultats {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(10, auto);
+    gap: 10px 30px;
+}
+
+.ligne-resultat {
+    display: grid;
+    grid-template-columns: 1fr 100px 140px;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.ligne-resultat.ok {
+    background: rgba(0, 255, 0, 0.325);
+}
+
+.ligne-resultat.ko {
+    background: rgba(255, 0, 0, 0.373);
+}
+
+/*----- Classement de fin de partie -----*/
+
+#resultats-partie {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(10, auto);
+    gap: 10px;
+}
+
+.classement {
+    display: grid;
+    grid-template-columns: 60px 1fr 100px;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    gap: 5px;
+    border-radius: 10px;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.winner {
+    background: gold;
+    color: black;
+    font-size: 20px;
+}

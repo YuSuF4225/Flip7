@@ -1,0 +1,29 @@
+/*---------- DARK MODE ----------*/
+
+body.dark {
+    background: #0a0f0a;
+}
+
+body.dark .principal {
+    background: radial-gradient(ellipse, #0a2a0a, #010a01);
+    color: #e8c547;
+}
+
+body.dark .joueur.actif {
+    border-color: #ffd700;
+    box-shadow: 0 0 15px #ffd700;
+}
+body.dark .status-enjeu {
+    color: #5cb85c;
+}
+
+body.dark .rond {
+    border-color: #b8860b;
+    color: #e8c547;
+}
+
+body.dark .rond:hover {
+    background-color: #0a2a0a;
+    color: #ffd700;
+    border-color: #ffd700;
+}

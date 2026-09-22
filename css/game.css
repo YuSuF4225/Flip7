@@ -1,0 +1,390 @@
+/*---------- PAGE JEU ----------*/
+
+#zone-jeu {
+    display: flex;
+    justify-content: center;
+    padding: 140px 30px 160px;
+}
+
+#principal-jeu {
+    position: relative;
+}
+
+/*----- Grille joueurs -----*/
+
+.grille-joueurs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+#joueurs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.joueur {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.55);
+    border: 2px solid #333;
+    border-radius: 14px;
+    padding: 14px;
+    color: #ccc;
+    gap: 10px;
+    min-height: 225px;
+}
+
+.joueur.actif {
+    border-color: #ffd700;
+    box-shadow: 0 0 15px #ffd700;
+    transform: scale(1.1);
+    color: #fff;
+    animation: clignote 2.4s infinite;
+}
+
+
+@keyframes clignote {
+    0%, 100% { 
+        border-color: #ffd700; 
+        box-shadow: 0 0 5px rgba(212,175,55,0.3); 
+    }
+    50% { 
+        border-color: #ffec8b; 
+        box-shadow: 0 0 25px rgba(255, 178, 51, 0.7); 
+    }
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pseudo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffd700;
+    letter-spacing: 0.5px;
+}
+
+.badge-donneur {
+    background: #05451c;
+    color: white;
+    font-size: 13px;
+    font-weight: 900;
+    border: 1px solid whitesmoke;
+    padding: 2px 8px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+}
+
+.total {
+    border: 1.5px solid #ffd70088;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.08);
+    letter-spacing: 1px;
+}
+
+/*----- Cartes en main -----*/
+
+.cartes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+    width : 230px;
+}
+
+.cartes .contour-carte {
+    display: inline-block;
+    width: 56px;
+    height: 78px;
+    overflow: visible;
+    position: relative;
+}
+
+.cartes .carte {
+    transform: scale(0.40);
+    transform-origin: top left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cartes .contour-carte:hover .carte {
+    transform: rotate(-5deg) scale(0.45);
+    z-index: 50;
+}
+
+#afficher-carte {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    padding: 0;
+    border-radius: 16px;
+}
+
+#afficher-carte .contour-carte {
+    display: block;
+    width: 154px;
+    height: 216px;
+    position: relative;
+    overflow: visible;
+}
+
+#afficher-carte .carte {
+    transform: scale(1.1);
+    transform-origin: top left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*----- Score & status -----*/
+
+.status {
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 3px 0;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.status-enjeu {
+    color: green;
+}
+
+.status-reste {
+    color: yellow;
+}
+
+.status-elimine {
+    color: red;
+}
+
+.score {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-top: auto;
+}
+
+/*----- Bande du haut -----*/
+
+#bande-tour {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: #022D12;
+    border-bottom: 2px solid #ffd70044;
+    color: #ffd700;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#volume {
+    position: absolute;
+    right: 20px;
+    width: 150px;
+    cursor: pointer;
+}
+
+/*----- Carte pioché -----*/
+
+#afficher-carte {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    border-radius: 16px;
+    box-shadow: 0 0 30px #ffd70088;
+}
+
+#afficher-carte .contour-carte {
+    transform: scale(1.5);
+}
+
+/*----- Boutons d'actions : piocher / stop -----*/
+
+#actionsJeu {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    gap: 14px;
+}
+
+#actionsJeu button {
+    font-size: 18px;
+    padding: 12px 36px;
+    border: 2px solid #ffd700;
+    background: rgba(38,100,11,0.85);
+    color: #ffd700;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#actionsJeu button:hover:not(:disabled) {
+    border-color: #f89b05;
+    background: #083a11;
+    color: #f89b05;
+    transform: scale(1.05);
+}
+
+/*----- Bande du bas : quitter / remplacer -----*/
+
+#bandeFin {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(1,22,7,0.85);
+    border-top: 1px solid #ffd70022;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 20px;
+    border-top: 2px solid #ffd70044;
+}
+
+#bandeFin button {
+    font-size: 16px;
+    padding: 10px 24px;
+    border: 1.5px solid #ffd700;
+    background-color: #26640b;
+    color: #ffd700;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#bandeFin button:hover:not(:disabled){
+    border-color: #f89b05;
+    background: rgba(8,58,17,0.3);
+    color: #f89b05;
+}
+
+#bandeJeu button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/*----- Message / notification -----*/
+
+#message {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background: rgba(0, 20, 5, 0.92);
+    border: 1.5px solid #ffd70066;
+    color: #ffd700;
+    padding: 14px 30px;
+    border-radius: 40px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    z-index: 1000;
+    opacity: 0;
+    white-space: nowrap;
+    transition: all 0.3s;
+}
+
+#message.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/*----- Choix d'effet : freeze / flip three / seconde chance -----*/
+
+.effet {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0a3d1f;
+    border: 2px solid #ffd700;
+    padding: 4px 8px 8px 4px;
+    border-radius: 12px;
+    z-index: 150;
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    text-align: center;
+}
+
+.effet h3 {
+    width: 100%;
+    text-align: center;
+}
+
+.effet button {
+    flex: 0 0 calc(25% - 10px);
+    max-width: 120px;
+    margin: 4px;
+    padding: 8px 18px;
+    border: 1.5px solid #ffd700;
+    background: #26640b;
+    color: #ffd700;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.15s;
+}
+
+.effet button:hover {
+    background: #083a11;
+    color: #f89b05;
+    border-color: #f89b05;
+}
+
+.effet-cacher {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+}
+
+#toggle-effet {
+    z-index: 200;
+    background: #0a3d1f;
+    border: 1.5px solid #ffd700;
+    color: #ffd700;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}

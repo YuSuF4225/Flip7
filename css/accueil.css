@@ -1,0 +1,49 @@
+/*---------- PAGE ACCUEIL ----------*/
+
+#principal-accueil.actif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#principal-accueil h2 {
+    font-size: 200px;
+    margin-bottom: 40px;
+}
+
+.flip {
+    color: white;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ffd700;
+}
+
+.seven {
+    color: #ffd700;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ffd700;
+}
+
+.btns-accueil {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.btns-accueil button {
+    min-width: 150px;
+    padding: 5px 15px;
+    font-size: 30px;
+    border: #ffd700 2px solid;
+    color: #ffd700;
+    border-radius: 15px;
+    background-color: #26640b;
+}
+
+.btns-accueil button:hover {
+    background-color: #083a11;
+    color: #f89b05;
+    border-color: #f89b05;
+    cursor: pointer;
+}
